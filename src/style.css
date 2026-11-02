@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f4f0e8;
+  background: #f5f1eb;
   color: #333;
 }
 
@@ -16,13 +16,21 @@ body {
 
 h1 {
   color: #654321;
+  font-size: 32px;
 }
 
-input {
+.upload {
+  display: inline-block;
+  background: #795548;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 10px;
+  cursor: pointer;
   margin: 20px;
-  padding: 12px;
-  background: white;
-  border-radius: 8px;
+}
+
+.upload input {
+  display: none;
 }
 
 .gallery {
@@ -34,7 +42,58 @@ input {
 
 .gallery img {
   width: 100%;
-  height: 180px;
+  height: 190px;
   object-fit: cover;
   border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
+
+.gallery img:hover {
+  transform: scale(1.04);
+}
+
+button {
+  background: #795548;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  margin: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 10;
+  color: white;
+}
+
+.viewer img {
+  max-width: 70%;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+.viewer .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.pagination {
+  margin: 25px;
+}
+
+ 
